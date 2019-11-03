@@ -14,4 +14,8 @@ export class DatadbService {
   guardarUsuario(usuario: Usuario): void {
     this.usuariosCollection.add(usuario);
   }
+
+  getUsuarios() {
+    return this.usuariosCollection;
+  }
 }
