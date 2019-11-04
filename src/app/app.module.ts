@@ -22,6 +22,12 @@ import { AngularFireModule } from '@angular/fire';
 import {AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { MaterialDesign } from './modulosCreados/materialDesign.module';
+import { AngularFullpageModule } from '@fullpage/angular-fullpage';
+
+// tslint:disable-next-line: max-line-length
+import { DialogOverviewExampleDialogComponent } from './componentes/modal/dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import { SnackbarComponent } from './componentes/modal/snackbar/snackbar.component';
+import { DetallesComponent } from './componentes/detalles/detalles.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,10 @@ import { MaterialDesign } from './modulosCreados/materialDesign.module';
     DashboardComponent,
     InicioComponent,
     EjemploComponent,
-    Error404Component
+    Error404Component,
+    DialogOverviewExampleDialogComponent,
+    SnackbarComponent,
+    DetallesComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +53,11 @@ import { MaterialDesign } from './modulosCreados/materialDesign.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     ReactiveFormsModule,
-    MaterialDesign
+    MaterialDesign,
+    AngularFullpageModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ DialogOverviewExampleDialogComponent, SnackbarComponent ] // NECESITAMOS ESTE COMPONENTE EN ESTE APARTADO
 })
 export class AppModule { }

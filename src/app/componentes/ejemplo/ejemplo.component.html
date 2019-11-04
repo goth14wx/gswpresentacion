@@ -1,37 +1,18 @@
 <main>
         <mat-card id='agregarcard'> 
-            <mat-card-title >Agregar un nuevo usuario</mat-card-title>
+            <mat-card-title class="font-major">Agregar un nuevo usuario</mat-card-title>
             <mat-card-content>
-                    <form action="" [formGroup]="grupoFormulario" (ngSubmit)="onGuardar()">
-                            <mat-form-field>
-                                    <input matInput placeholder="Nombre Usuario" formControlName='nombre'>
-                            </mat-form-field>
-                            <div class="alert-danger"></div>
-                            <div class="alert alert-danger" role="alert" *ngIf="nombre.invalid && nombre.errors.required">
-                                    El nombre es requerido
-                              </div>
-                            <mat-form-field>
-                                    <input type="number" matInput placeholder="Edad Usuario" formControlName='edad'>
-                            </mat-form-field>
-                            <div class="alert alert-danger" role="alert" *ngIf="edad.invalid && edad.errors.required">
-                                        La edad es requerida
-                                  </div>
-                                  <mat-form-field>
-                                                <mat-label>Avatar</mat-label>
-                                                <mat-select formControlName="avatar">
-                                                  <mat-option *ngFor="let avatar of avatars" [value]="avatar.val">
-                                                    {{avatar.avatar}}
-                                                  </mat-option>
-                                                </mat-select>
-                                              </mat-form-field>
-                            <button type="submit" mat-button mat-raised-button color='primary' id='agregarButton'>Agregar</button>
-                    </form>
+                        <button mat-raised-button (click)="openDialog()" color="primary">
+                                <span class="font-oldenburg">Agregar</span>
+                        </button>
             </mat-card-content>
         </mat-card>
         <mat-grid-list cols="2" rowHeight="2:1" *ngIf="usuarios">
-                        <mat-grid-tile *ngFor="let user of usuarios">
-                                <mat-card>
-                                        <mat-card-title><span class="text-center">nombre usuario: {{user.nombre}}</span></mat-card-title>
+                        <mat-grid-tile *ngFor="let user of usuarios; let i = index">
+                                <mat-card class="card-user" [style]="'background-color: '+i%2==0 ? 'hsl(203, 89%, 53%)': ''">
+                                        <mat-card-title><span class="text-center"><span class="font-kodchasan">nombre usuario #{{(i+1)}}:</span> 
+                                                <br>
+                                                <span class="font-meera"> {{user.nombre}}</span></span></mat-card-title>
                                         <mat-card-content>
                                                         <img width="150px" height="150px" [src]="'https://api.adorable.io/avatars/face/'+user.avatar" alt="">
                                         </mat-card-content>

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { EjemploComponent } from './componentes/ejemplo/ejemplo.component';
 import { Error404Component } from './componentes/error404/error404.component';
+import { DetallesComponent } from './componentes/detalles/detalles.component';
 
 
 const routes: Routes = [
@@ -15,8 +16,8 @@ const routes: Routes = [
     component: EjemploComponent
   },
   {
-    path: '',
-    component: InicioComponent
+    path: 'detalles',
+    component: DetallesComponent
   },
   {
     path: '**',

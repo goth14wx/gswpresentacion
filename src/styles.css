@@ -1,4 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~fullpage.js/dist/fullpage.min.css';
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.font-oldenburg{
+    font-family: 'Oldenburg', cursive;
+}
+
+.font-autour{
+    font-family: 'Autour One', cursive;
+}
+
+.font-monofett{
+    font-family: 'Monofett', cursive;
+}
+
+.font-meera{
+    font-family: 'Meera Inimai', sans-serif;
+}
+
+.font-kodchasan{
+    font-family: 'Kodchasan', sans-serif;
+}
+
+.font-major{
+    font-family: 'Major Mono Display', monospace;
+}
+
+.font-thasadith{
+    font-family: 'Thasadith', sans-serif;
+}
+
+
+

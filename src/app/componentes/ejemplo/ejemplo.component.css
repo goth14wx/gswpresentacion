@@ -22,3 +22,7 @@ main{
 .background-cyan{
     background-color: cyan;
 }
+
+.card-user{
+    width: 50%;
+}

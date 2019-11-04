@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import Usuario from '../models/usuario';
+import { Observable, Observer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class DatadbService {
     this.usuariosCollection.add(usuario);
   }
 
-  getUsuarios() {
+  getUsuarios(): any {
     return this.usuariosCollection;
   }
+
 }

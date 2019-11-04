@@ -1,57 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { DatadbService } from 'src/app/services/datadb.service';
-
+import {MatDialog } from '@angular/material/dialog';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Usuario from 'src/app/models/usuario';
-
+import { DialogOverviewExampleDialogComponent } from '../modal/dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { SnackbarComponent } from '../modal/snackbar/snackbar.component';
 @Component({
   selector: 'app-ejemplo',
   templateUrl: './ejemplo.component.html',
-  styleUrls: ['./ejemplo.component.css']
+  styleUrls: ['./ejemplo.component.css'],
 })
 export class EjemploComponent implements OnInit {
 
 
   grupoFormulario: FormGroup;
   usuarios: Usuario[];
-  avatars: any = [
-  {
-    avatar: 'Avatar 1',
-    val: 'face1'
-  },
-  {
-    avatar: 'Avatar 2',
-    val: 'face2'
-  },
-  {
-    avatar: 'Avatar 3',
-    val: 'face3'
-  },
-  {
-    avatar: 'Avatar 4',
-    val: 'face4'
-  },
-  {
-    avatar: 'Avatar 5',
-    val: 'face5'
-  },
-  {
-    avatar: 'Avatar 6',
-    val: 'face6'
-  },
-  {
-    avatar: 'Avatar 7',
-    val: 'face7'
-  },
-  {
-    avatar: 'Avatar 8',
-    val: 'face8'
-  },
-  {
-    avatar: 'Avatar 9',
-    val: 'face9'
+
+  animal: string;
+  name: string;
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+      width: '250px',
+      data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+      if(result) {
+        this.openSnackBar();
+      }
+    });
   }
-  ];
+
   crearGrupoFormulario() {
     return new FormGroup({
       nombre: new FormControl('', [ Validators.required, Validators.minLength(2)]),
@@ -60,7 +41,8 @@ export class EjemploComponent implements OnInit {
     });
   }
 
-  constructor(private httpdb: DatadbService) {
+  // tslint:disable-next-line: variable-name
+  constructor(private httpdb: DatadbService, private _snackBar: MatSnackBar , public dialog: MatDialog /* ESTE ES PARA EL MODAL */) {
     this.grupoFormulario = this.crearGrupoFormulario();
   }
 
@@ -74,6 +56,7 @@ export class EjemploComponent implements OnInit {
       this.httpdb.guardarUsuario(this.grupoFormulario.value);
       this.obtenerUsuarios();
       console.log('guardado');
+      this.resetearFormulario();
     } else {
       console.log('no valido');
     }
@@ -90,6 +73,17 @@ export class EjemploComponent implements OnInit {
       usuarios => this.usuarios = usuarios
     );
     console.log(this.usuarios);
+  }
+
+  resetearFormulario() {
+    this.grupoFormulario.reset();
+  }
+
+  openSnackBar() {
+    this._snackBar.openFromComponent(SnackbarComponent, {
+      duration: 3 * 1000,
+      panelClass: 'bg-success'
+    });
   }
 
 

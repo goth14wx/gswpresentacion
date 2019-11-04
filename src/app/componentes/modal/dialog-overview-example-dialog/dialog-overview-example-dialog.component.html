@@ -1,0 +1,25 @@
+<form action="" [formGroup]="formularioUsuario" (ngSubmit)="onGuardar()">
+        <mat-form-field>
+                <input class="font-thasadith" matInput placeholder="Nombre Usuario" formControlName='nombre'>
+        </mat-form-field>
+        <div class="alert-danger"></div>
+        <div class="alert alert-danger font-thasadith" role="alert" *ngIf="nombre.invalid && nombre.errors.required">
+                El nombre es requerido
+          </div>
+        <mat-form-field>
+                <input class="font-thasadith" type="number" matInput placeholder="Edad Usuario" formControlName='edad'>
+        </mat-form-field>
+        <div class="alert alert-danger font-thasadith" role="alert" *ngIf="edad.invalid && edad.errors.required">
+                    La edad es requerida
+              </div>
+              <mat-form-field>
+                            <mat-label>Avatar</mat-label>
+                            <mat-select formControlName="avatar">
+                              <mat-option *ngFor="let avatar of avatars" [value]="avatar.val">
+                                {{avatar.avatar}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <!--- mat-dialog-close ES SOLO UN DATO PARA QUE EL COMPONENTE PADRE, SE DE CUENTA SI ALGO SUCEDIO O NO, PUEDE SER CUALQUIER TIPO, INTEGER,BOOLEAN,STRING, ETC... -->
+        <button [disabled]="!formularioUsuario.valid" type="submit" mat-button mat-raised-button color='primary' [mat-dialog-close]="true" id='agregarButton'>Agregar</button>
+</form>
