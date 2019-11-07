@@ -1,10 +1,47 @@
-<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
-        <div class="section" style="background-color: #0798ec;">Some section1</div>
-          <div class="section" (click)="fullpage_api.moveSectionDown()">Some section2</div>
-          <div class="section">
-              <div class="slide">Slide 2.1</div>
-              <div class="slide">Slide 2.2</div>
-              <div class="slide">Slide 2.3</div>
-          </div>
-          <div class="section" (click)="fullpage_api.moveTo('secondPage', 2)">Some section4</div>
-      </div>
+
+      <ul id="menu" class="text-right">
+            <li data-menuanchor="firstPage"><a href="#firstPage">Inicio</a></li>
+            <li data-menuanchor="secondPage"><a href="#secondPage">Angular</a></li>
+            <li data-menuanchor="thirdPage"><a href="#thirdPage">Firebase</a></li>
+            <li data-menuanchor="fourthPage"><a href="#fourthPage">Google Cloud</a></li>
+            <li><a [routerLink]="'/ejemplo'" style="background-color: tomato !important; border-radius: 10px;">Salir</a></li>
+        </ul>
+        
+        <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)" #fullpageRef>
+            <div class="section">
+                    <div class="area" >
+                            <ul class="circles">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                            </ul>
+                    </div >
+                <app-slider-one-presentacion></app-slider-one-presentacion>
+            </div>
+            <div class="section segundaSlider">
+               <app-slider-two-angular></app-slider-two-angular>
+            </div>
+            <div class="section">
+                <div class="slide">
+                    <h1>Slide 3.1</h1>
+                   
+                </div>
+                <div class="slide">
+                    <h1>Slide 3.2</h1>
+                </div>
+                <div class="slide">
+                    Slide 3.3
+                </div>
+            </div>
+            <div class="section">
+                <h1>Section 4</h1>
+            </div>
+            
+        </div>

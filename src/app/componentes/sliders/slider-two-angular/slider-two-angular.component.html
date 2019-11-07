@@ -1,0 +1,42 @@
+
+<mat-grid-list cols="3" >
+    <br>
+    <mat-grid-tile-header>
+        <h1>Angular Salva El Dia!!</h1>
+        <mat-grid-tile>
+            <img class="animated zoomIn" [ngClass]="{'animated pulse':moverAyuda}" style="display: block; display: block;" width="200px" height="200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/512px-Angular_full_color_logo.svg.png" alt="">
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-card class="bg-transparent">
+                <mat-card-header>
+                    <h3 class="text-center font-sans" style="color:white;"> ¿... Y Por que?</h3>
+                </mat-card-header>
+                <mat-card-content class="text-justify font-raleway" style="color:white; font-size: 20px;">
+                    Angular se integra muy bien en el ecosistema de google, mas aun con otras herramientas como la ya mencionada firebase, que mas adelante se detallara.
+                </mat-card-content>
+             <mat-card-footer>
+
+            <h6 class="text-center font-raleway" [ngClass]="{'animated tada':moverAyuda}" style="color:white; font-size: 20px;display: block;">
+                    mas informacion presione la tecla de direccion derecha ->
+            </h6>
+             </mat-card-footer>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+                <mat-card class="bg-transparent">
+                    <mat-card-header>
+                        <h3 class="text-center" style="color:white;">Comandos</h3>
+                    </mat-card-header>
+                    <mat-card-content class="text-left">
+                        <mat-card class="mt-2" *ngFor="let comando of comandos" style="background-color: black !important;">
+                            <h6 class="font-orbitron" style="color: white;">
+                            {{comando.comando}}
+                            </h6>
+                        </mat-card>
+                    </mat-card-content>
+                    
+                </mat-card>
+            </mat-grid-tile>
+    </mat-grid-tile-header>
+</mat-grid-list>
+

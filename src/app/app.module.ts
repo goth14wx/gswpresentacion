@@ -28,6 +28,8 @@ import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { DialogOverviewExampleDialogComponent } from './componentes/modal/dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { SnackbarComponent } from './componentes/modal/snackbar/snackbar.component';
 import { DetallesComponent } from './componentes/detalles/detalles.component';
+import { SliderOnePresentacionComponent } from './componentes/sliders/slider-one-presentacion/slider-one-presentacion.component';
+import { SliderTwoAngularComponent } from './componentes/sliders/slider-two-angular/slider-two-angular.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { DetallesComponent } from './componentes/detalles/detalles.component';
     Error404Component,
     DialogOverviewExampleDialogComponent,
     SnackbarComponent,
-    DetallesComponent
+    DetallesComponent,
+    SliderOnePresentacionComponent,
+    SliderTwoAngularComponent
   ],
   imports: [
     BrowserModule,

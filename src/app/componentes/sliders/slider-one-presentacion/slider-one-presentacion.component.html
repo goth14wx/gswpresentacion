@@ -1,0 +1,21 @@
+
+<!--PRESENTACION ANGULAR FIREBASE -->
+        <mat-grid-list cols="3" >
+            <br>
+            <mat-grid-tile-header>
+                <h1 class="text-center font-major animated fadeInDown" id="elementId" style="color:white;">De como desplegar una App en google cloud</h1>
+            </mat-grid-tile-header>
+            <mat-grid-tile *ngFor="let logo of logos">
+                <!--IMAGEN DE CADA TECNOLOGIA A MOSTRAR DESDE EL ARRAY DE logos-->
+                <mat-card *ngIf="logo.mostrar" [ngClass]="{'animated zoomIn' : logo.animar}" style="background-color: transparent !important;" class="example-card">
+                        <mat-card-content>
+                            <img style="display: block;" width="200px" height="200px" [src]="logo.url" alt="" srcset="">
+                        </mat-card-content>
+                        <mat-card-footer>
+                            <h4 style="display: block; color: white;" class="font-kodchasan text-center">{{logo.titulo}}</h4>
+                        </mat-card-footer>
+                </mat-card>
+               
+                
+            </mat-grid-tile>
+          </mat-grid-list>
