@@ -1,0 +1,43 @@
+
+<mat-grid-list cols="3" >
+        <br>
+        <mat-grid-tile-header>
+            <h1 style="color: white;">GOOGLE CLOUD + ANGULAR = <i class="em em-white_check_mark" aria-role="presentation" aria-label="WHITE HEAVY CHECK MARK"></i></h1>
+            <mat-grid-tile>
+                <img  [ngClass]="{'animated pulse':moverAyuda}" style="display: block; display: block;" width="200px" height="200px" src="https://d1o2okarmduwny.cloudfront.net/wp-content/uploads/2014/04/icon_cloud_192pt_clr.png" alt="">
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card class="bg-transparent">
+                    <mat-card-header>
+                        <h3 class="text-center font-sans" style="color:white;">Google cloud perfecto con Angular</h3>
+                    </mat-card-header>
+                    <mat-card-content class="text-justify font-raleway" style="color:white; font-size: 20px;">
+                        Google Cloud Ofrece un despliegue de una aplicacion de angular sin problemas, solo necesitas un repositorio para poder empezar y google te brindara la facilidad para poder sentirte libre con su consola.
+                    </mat-card-content>
+                 <mat-card-footer>
+    
+                <h6 class="text-center font-raleway" [ngClass]="{'animated tada':moverAyuda}" style="color:white; font-size: 20px;display: block;">
+                        mas informacion presione la tecla de direccion derecha ->
+                </h6>
+                 </mat-card-footer>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <mat-card class="bg-transparent">
+                        <mat-card-header>
+                            <h3 class="text-center" style="color:white;">Comandos</h3>
+                        </mat-card-header>
+                        <mat-card-content class="text-left">
+                            <mat-card class="mt-2" *ngFor="let comando of comandos" style="background-color: black !important;">
+                                <h6 class="font-orbitron" style="color: white;">
+                                {{comando.comando}}
+                                </h6>
+                            </mat-card>
+                        </mat-card-content>
+                        
+                    </mat-card>
+                </mat-grid-tile>
+        </mat-grid-tile-header>
+    </mat-grid-list>
+    
+    

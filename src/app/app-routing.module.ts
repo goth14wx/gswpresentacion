@@ -8,6 +8,10 @@ import { DetallesComponent } from './componentes/detalles/detalles.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: InicioComponent,
+  },
+  {
     path: 'inicio',
     component: InicioComponent,
   },

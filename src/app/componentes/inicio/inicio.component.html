@@ -1,1 +1,33 @@
-<p>inicio works!</p>
+<div >
+    <mat-card style="margin:auto; margin-top: 5%; width:50%" class="terceraSlider">
+        <mat-card-title>
+            <h1 class="text-center font-major">Proyecto GSW</h1>
+            <h6 class="text-center font-major">proyecto clave: google cloud</h6>
+        </mat-card-title>
+        <mat-card-content>
+            <mat-grid-list cols="2">
+                <mat-grid-tile>
+                        
+                        <mat-card [routerLink]="'/detalles'">
+                            <mat-card-title>
+                                    <img style="display: block;" width="200px" height="200px" src="https://cdn4.iconfinder.com/data/icons/business-and-office-4-2/64/247-512.png" alt="" srcset="">
+                            </mat-card-title>
+                            <mat-card-footer>
+                                    <div class="text-center font-autour" style="display: block;">Documentacion</div>
+                            </mat-card-footer>
+                        </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <mat-card [routerLink]="'/ejemplo'">
+                                <mat-card-title>
+                                        <img style="display: block;" width="200px" height="200px" src="https://icon-library.net/images/angularjs-icon/angularjs-icon-15.jpg" alt="" srcset="">
+                                </mat-card-title>
+                                <mat-card-footer>
+                                        <div class="text-center font-autour" style="display: block;">Ejemplo Funcional</div>
+                                </mat-card-footer>
+                            </mat-card>
+                </mat-grid-tile>
+              </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+</div>

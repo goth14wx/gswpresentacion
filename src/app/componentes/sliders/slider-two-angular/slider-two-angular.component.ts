@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as AOS from 'aos';
 @Component({
   selector: 'app-slider-two-angular',
   templateUrl: './slider-two-angular.component.html',
@@ -21,6 +21,7 @@ export class SliderTwoAngularComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    AOS.init();
     setInterval(() => {
       this.moverAyuda = !this.moverAyuda;
     }, 1000);

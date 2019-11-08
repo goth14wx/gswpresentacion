@@ -30,6 +30,14 @@ import { SnackbarComponent } from './componentes/modal/snackbar/snackbar.compone
 import { DetallesComponent } from './componentes/detalles/detalles.component';
 import { SliderOnePresentacionComponent } from './componentes/sliders/slider-one-presentacion/slider-one-presentacion.component';
 import { SliderTwoAngularComponent } from './componentes/sliders/slider-two-angular/slider-two-angular.component';
+import { SliderTwoAngularTwoComponent } from './componentes/sliders/slider-two-angular-two/slider-two-angular-two.component';
+import { SliderTwoAngularThreeComponent } from './componentes/sliders/slider-two-angular-three/slider-two-angular-three.component';
+import { SliderTwoAngularFourComponent } from './componentes/sliders/slider-two-angular-four/slider-two-angular-four.component';
+import { SliderThreeFirebaseComponent } from './componentes/sliders/slider-three-firebase/slider-three-firebase.component';
+import { SliderThreeFirebaseTwoComponent } from './componentes/sliders/slider-three-firebase-two/slider-three-firebase-two.component';
+import { SliderFourgoogleCloudComponent } from './componentes/sliders/slider-fourgoogle-cloud/slider-fourgoogle-cloud.component';
+import { SliderFourgoogleCloudTwoComponent } from './componentes/sliders/slider-fourgoogle-cloud-two/slider-fourgoogle-cloud-two.component';
+import { HomeComponent } from './componentes/home/home.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +50,15 @@ import { SliderTwoAngularComponent } from './componentes/sliders/slider-two-angu
     SnackbarComponent,
     DetallesComponent,
     SliderOnePresentacionComponent,
-    SliderTwoAngularComponent
+    SliderTwoAngularComponent,
+    SliderTwoAngularTwoComponent,
+    SliderTwoAngularThreeComponent,
+    SliderTwoAngularFourComponent,
+    SliderThreeFirebaseComponent,
+    SliderThreeFirebaseTwoComponent,
+    SliderFourgoogleCloudComponent,
+    SliderFourgoogleCloudTwoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
